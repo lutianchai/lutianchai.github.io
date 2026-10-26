@@ -12,7 +12,7 @@ https://lutianchai.github.io/
 
 - 网页标签标题：`<title>鹿添柴</title>`。
 - 搜索简介：`meta name="description"`。
-- 首页名字：`<h1><span>鹿添柴</span></h1>`。
+- 首页名字：`h1` 内的三个名字字符（同时修改 `aria-label`）。
 - 欢迎语：`class="hello"` 所在段落。
 - GitHub 链接：搜索 `https://github.com/lutianchai`。
 - 介绍、作品或文章：在页面标注的 HTML 注释处添加内容。
@@ -23,3 +23,7 @@ https://lutianchai.github.io/
 仓库名为 `lutianchai.github.io`。进入 Settings → Pages，在 Build and deployment 中选择 Deploy from a branch，分支选择 `main`，目录选择 `/ (root)`，然后保存。
 
 设计参考 Apple 官网的简约排版，页面代码独立编写。
+
+## 配色
+
+默认使用星宇橙色，可通过页面按钮切换到银色、深蓝色。每次重新打开都会恢复橙色。

@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f5f5f7">
   <title>鹿添柴</title>
   <style>
-    :root { color-scheme: light; --background:#f5f5f7; --ink:#1d1d1f; --muted:#6e6e73; --line:rgba(0,0,0,.12); --top:#fff; --a:#2669ce; --b:#90c4ee; --c:#0e2855; }
+    :root { color-scheme: light; --background:#f5f5f7; --ink:#1d1d1f; --muted:#6e6e73; --line:rgba(0,0,0,.12); --top:#fff; --a:#c86537; --b:#f7bc8e; --c:#8f391b; }
     * { box-sizing:border-box; }
     html { min-width:280px; background:var(--background); }
     body { margin:0; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; -webkit-font-smoothing:antialiased; transition:background .6s,color .6s; }
@@ -24,46 +24,47 @@
     .github { display:flex; align-items:center; gap:6px; }
     .github:hover { color:#0071e3; }
     .github svg { width:11px; height:11px; }
-    main { min-height:calc(100svh - 120px); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; padding:80px 24px 72px; }
+    main { min-height:calc(100svh - 120px); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; padding:56px 24px 48px; }
     .hero { position:relative; z-index:1; text-align:center; width:100%; animation:arrive 1.1s ease both; }
     .eyebrow { margin:0 0 30px; font-size:20px; font-weight:500; letter-spacing:.02em; }
-    h1 { margin:0; font-size:clamp(82px,16.2vw,208px); font-weight:650; line-height:1.2; letter-spacing:-.065em; padding:0 .075em .12em 0; }
+    h1 { margin:0 auto; max-width:660px; display:grid; grid-template-columns:repeat(3,1fr); font-size:clamp(82px,14vw,176px); font-weight:650; line-height:1.2; letter-spacing:-.04em; padding:0 0 .06em; }
     h1 span { background:linear-gradient(160deg,var(--c) 12%,var(--a) 43%,var(--b) 58%,var(--a) 74%,var(--c) 100%); color:transparent; background-clip:text; -webkit-background-clip:text; }
-    .hello { margin:24px 0 0; color:var(--muted); font-size:24px; line-height:1.5; font-weight:500; letter-spacing:-.04em; }
-    .palette { margin:65px auto 0; display:flex; justify-content:center; gap:15px; }
+    .hello { margin:32px 0 0; color:var(--muted); font-size:24px; line-height:1.5; font-weight:500; letter-spacing:-.04em; }
+    .palette { margin:30px auto 0; display:flex; justify-content:center; gap:15px; }
     .swatch { position:relative; border:0; width:24px; height:24px; padding:0; border-radius:50%; background:var(--swatch); cursor:pointer; box-shadow:inset 0 1px 3px #0003; }
     .swatch[aria-pressed="true"]::after { content:""; position:absolute; inset:-5px; border:1px solid var(--muted); border-radius:50%; }
     .color-name { font-size:11px; color:var(--muted); margin:18px 0 0; }
     footer { max-width:1024px; margin:auto; height:64px; padding:0 28px; }
     .footer-inner { border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:20px; color:var(--muted); font-size:11px; }
     .footer-inner a:hover { text-decoration:underline; }
-    body[data-color="silver"] { --a:#8c9299; --b:#d8dce1; --c:#34373d; }
-    body[data-color="midnight"] { color-scheme:dark; --background:#08090d; --ink:#f5f5f7; --muted:#a1a1a6; --line:#ffffff26; --top:#101115; --a:#848cb3; --b:#d7daf3; --c:#3b4268; background:var(--background); }
+    body[data-color="blue"] { --a:#394b6b; --b:#92a2bd; --c:#17253e; }
+    body[data-color="silver"] { --a:#999da4; --b:#e0e2e7; --c:#555b65; }
+    body[data-color="orange"] { --a:#c86537; --b:#f7bc8e; --c:#8f391b; }
     @keyframes arrive { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    @media(max-width:600px) { nav { padding:0 22px; } .nav-right { gap:20px; } main { min-height:calc(100svh - 140px); padding:90px 20px; } .eyebrow { font-size:17px; margin-bottom:25px; } h1 { font-size:clamp(76px,21vw,125px); } .hello { font-size:20px; margin-top:22px; } .palette { margin-top:52px; } footer { height:84px; padding:0 22px; } .footer-inner { font-size:10px; gap:12px; flex-wrap:wrap; padding-top:16px; } }
+    @media(max-width:600px) { nav { padding:0 22px; } .nav-right { gap:20px; } main { min-height:calc(100svh - 140px); padding:64px 20px 48px; } .eyebrow { font-size:17px; margin-bottom:25px; } h1 { font-size:clamp(76px,21vw,125px); } .hello { font-size:20px; margin-top:22px; } .palette { margin-top:30px; } footer { height:84px; padding:0 22px; } .footer-inner { font-size:10px; gap:12px; flex-wrap:wrap; padding-top:16px; } }
     @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
   </style>
 </head>
-<body>
+<body data-color="orange">
   <a class="skip" href="#main">跳到主要内容</a>
   <header>
     <nav aria-label="主导航">
       <!-- 修改名字时，也同步修改 title、description、h1 和页脚。 -->
       <a class="brand" href="./" aria-label="鹿添柴首页">鹿添柴</a>
-      <div class="nav-right"><span class="current">个人主页</span><a class="github" href="https://space.bilibili.com/487399025" aria-label="鹿添柴的B站主页">B站 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg></a><a class="github" href="https://github.com/lutianchai">GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg></a></div>
+      <div class="nav-right"><span class="current">个人主页</span><a class="github" href="https://space.bilibili.com/487399025" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="鹿添柴的B站主页">B站 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg></a><a class="github" href="https://github.com/lutianchai">GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9 9 3M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg></a></div>
     </nav>
   </header>
   <main id="main">
     <div class="hero">
       <p class="eyebrow">你好，我是</p>
-      <h1><span>鹿添柴</span></h1>
+      <h1 aria-label="鹿添柴"><span aria-hidden="true">鹿</span><span aria-hidden="true">添</span><span aria-hidden="true">柴</span></h1>
       <p class="hello">很高兴，在这里遇见你。</p>
       <div class="palette" role="group" aria-label="选择页面配色">
-        <button class="swatch" style="--swatch:#92b8dc" data-color="blue" aria-label="蓝色" aria-pressed="true" title="蓝色"></button>
-        <button class="swatch" style="--swatch:#d2d3d4" data-color="silver" aria-label="原色" aria-pressed="false" title="原色"></button>
-        <button class="swatch" style="--swatch:#303446" data-color="midnight" aria-label="午夜色" aria-pressed="false" title="午夜色"></button>
+        <button class="swatch" style="--swatch:#394b6b" data-color="blue" aria-label="深蓝色" aria-pressed="false" title="深蓝色"></button>
+        <button class="swatch" style="--swatch:#d2d3d4" data-color="silver" aria-label="银色" aria-pressed="false" title="银色"></button>
+        <button class="swatch" style="--swatch:#c86537" data-color="orange" aria-label="星宇橙色" aria-pressed="true" title="星宇橙色"></button>
       </div>
-      <p class="color-name" aria-live="polite" id="color-name">蓝色</p>
+      <p class="color-name" aria-live="polite" id="color-name">星宇橙色</p>
       <!-- 以后可在这里增加个人介绍、作品、文章等内容。 -->
     </div>
   </main>
@@ -76,13 +77,12 @@
       document.body.dataset.color = color;
       swatches.forEach(button => button.setAttribute('aria-pressed', String(button === selected)));
       document.querySelector('#color-name').textContent = selected.getAttribute('aria-label');
-      document.querySelector('meta[name="theme-color"]').content = color === 'midnight' ? '#08090d' : '#f5f5f7';
+      document.querySelector('meta[name="theme-color"]').content = '#f5f5f7';
     }
     swatches.forEach(button => button.addEventListener('click', () => {
       setColor(button.dataset.color);
-      try { localStorage.setItem('homepage-color', button.dataset.color); } catch (_) {}
     }));
-    try { setColor(localStorage.getItem('homepage-color') || 'blue'); } catch (_) {}
+    setColor('orange');
     document.querySelector('#year').textContent = new Date().getFullYear();
   </script>
 </body>
