@@ -1,29 +1,55 @@
 # 鹿添柴的个人主页
 
-一个可直接托管到 GitHub Pages 的静态主页，无需服务器或安装依赖。
+无需服务器或安装依赖的静态个人主页。
 
 ## 在线访问
 
 https://lutianchai.github.io/
 
-## 修改内容
+## 页面内容
 
-打开仓库中的 `index.html`，点击编辑，修改并提交后，GitHub Pages 会自动更新。
+- 个人介绍、B 站与 GitHub 入口。
+- 星宇橙色、银色、深蓝色三种配色。
+- 当前三个公开仓库的展示卡片：雨课堂刷课器、Android 模拟器工具箱和本主页。
+- 三个预留作品位置。预留位置只是展示，不会跳转到空页面。
+- 桌面三列、平板两列、手机单列，支持键盘导航与减少动态效果的系统偏好。
 
-- 网页标签标题：`<title>鹿添柴</title>`。
+## 以后怎样添加项目
+
+在 GitHub 打开 `index.html`，点击编辑，找到 `class="project-grid"`。
+
+将任意一个 `class="project-card placeholder"` 的完整 `<li>…</li>` 替换成下面的项目卡片，填写自己的内容：
+
+```html
+<li class="project-card">
+  <h3>项目名称</h3>
+  <p class="project-description">用一两句话说明项目能做什么。</p>
+  <a class="project-link"
+     href="https://github.com/lutianchai/repository-name"
+     aria-label="查看项目名称的 GitHub 仓库">
+    查看项目 <span aria-hidden="true">↗</span>
+  </a>
+</li>
+```
+
+没有空位时，在 `project-grid` 的结束标签前继续添加卡片即可，页面会自动换行。项目使用静态卡片，不会自动同步 GitHub 仓库列表；发布新仓库后在这里补上一张即可。所有项目内容在关闭 JavaScript 时仍可访问。
+
+## 修改其他内容
+
+- 网页标题：`<title>`。
 - 搜索简介：`meta name="description"`。
-- 首页名字：`h1` 内的三个名字字符（同时修改 `aria-label`）。
-- 欢迎语：`class="hello"` 所在段落。
-- GitHub 链接：搜索 `https://github.com/lutianchai`。
-- 介绍、作品或文章：在页面标注的 HTML 注释处添加内容。
+- 姓名：同步修改导航、`h1`（含 `aria-label`）、页脚和网页标题。
+- 欢迎语：`class="hello"`。
+- 项目区标题：`id="projects-title"`。
+- B 站入口：搜索 `https://space.bilibili.com/487399025`。
 - 配色与布局：在 `<style>` 中修改。
 
-## 首次部署
+默认使用星宇橙色，每次重新打开恢复橙色。项目链接使用蓝色强调。
 
-仓库名为 `lutianchai.github.io`。进入 Settings → Pages，在 Build and deployment 中选择 Deploy from a branch，分支选择 `main`，目录选择 `/ (root)`，然后保存。
+## 发布
 
-设计参考 Apple 官网的简约排版，页面代码独立编写。
+修改并提交到 `main` 后，GitHub Pages 会自动更新。
 
-## 配色
+首次配置：Settings → Pages → Deploy from a branch，选择 `main` 和 `/ (root)`。
 
-默认使用星宇橙色，可通过页面按钮切换到银色、深蓝色。每次重新打开都会恢复橙色。
+设计参考 Apple 中国官网的简约排版、留白和蓝色链接，页面代码独立编写。
